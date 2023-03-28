@@ -4,15 +4,18 @@ import CartWidget from '../../CartWidget/CartWidget'
 
 const Navbar = () => {
     return (
-        <nav>
-            <div className="Navbar">
+        <nav className='Navbar'>
+            <div>
                 <h1>Ecommerce</h1>
-                <button>Juguetes de Madera</button>
-                <button>Didacticos</button>
-                <button>Laberintos</button>
+                <img src='logo' alt='logo' />
+            </div>
+            <div className='Button'>
+                <button label="Juguetes Madera" />
+                <button label="Didacticos" />
+                <button label="Laberintos" />
             </div>
             <div className="cart">
-            <CartWidget />
+                <CartWidget />
             </div>
         </nav>
     )
