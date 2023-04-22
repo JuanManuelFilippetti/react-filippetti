@@ -1,16 +1,21 @@
-
+import logo from './logo.svg'
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import Counter from './components/Counter/Counter';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function App() {
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetaliContainer';
+const App = () => {
   return (
     <div className="App">
-      <Navbar />
-      <Counter />
-      <itemListContainer greeting={'Bienvenidos'}/>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<itemListContainer />} />
+          <Route path='/category/:categoryId' element={<ItemListContainer />} />
+          <Route path='/item/:productId' element={<ItemDetailContainer />} />
+        </Routes>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
 export default App;

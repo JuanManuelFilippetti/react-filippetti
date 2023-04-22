@@ -7,7 +7,7 @@ const Navbar = () => {
         <nav className='Navbar'>
             <div>
                 <h1>Ecommerce</h1>
-                <img src='logo' alt='logo' />
+                <img src='/assest/logo' alt='logo' />
             </div>
             <div className='Button'>
                 <button label="Juguetes Madera" />
