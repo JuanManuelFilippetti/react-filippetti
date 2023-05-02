@@ -49,10 +49,14 @@ const ItemDetailContainer = () => {
     return (
         <div className='ItemDetailContainer'>
             <h1>Detalle de producto</h1>
-            <div>
+            <ItemDetail {...product} />
+           
+            {/* <div>
                 <h2>{product.name}</h2>
                 <img src={product.img} alt={product.name} />
-            </div>
+                <h3>Precio: ${product.price}</h3>
+                <ItemDetail stock={product.stock} initial={1} />
+            </div> */}
         </div>
     )
 }
