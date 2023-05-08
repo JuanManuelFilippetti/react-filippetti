@@ -17,8 +17,6 @@ const Counter = () => {
             <h1>{count}</h1>
             <button callback={decrement} label={'decrementar'} />
             <button callback={increment} label={'incrementar'} />
-            {/*<button onClick={decrement}>-</button>
-            <button onClick={increment}>+</button>*/}
         </div>
     )
 }

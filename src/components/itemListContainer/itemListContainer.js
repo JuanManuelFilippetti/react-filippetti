@@ -1,11 +1,9 @@
-//import { getProducts, getProductsByCategory } from "../../asyncMock" 
-import { useState, useEffect, memo } from 'react'
-import { useParams } from "react-router-dom"
-
-import ItemList from '../ItemList/ItemList'
-
-import { getDocs, collection, query, where } from 'firebase/firestore'
+import { useState, useEffect, memo } from 'react';
+import { useParams } from "react-router-dom";
+import ItemList from '../ItemList/ItemList';
+import { getDocs, collection, query, where } from 'firebase/firestore';
 import { db } from '../../service/firebase/firebaseConfig'
+
 
 const ItemListMemo = memo(ItemList)
 
@@ -26,7 +24,6 @@ const ItemListContainer = ({ greeting }) => {
         
         getDocs(productsRef)
             .then(snapshot => {
-                console.log(snapshot)
                 const porductsAdapted = snapshot.docs.map(doc => {
                     const data = doc.data()
                     return { id: doc.id, ...data}
@@ -34,24 +31,10 @@ const ItemListContainer = ({ greeting }) => {
                 setProducts(productsAdapted)
             })
             .catch(error => {
-                console.log(error)
             })
             .finally(() => {
                 setLoading(false)
-            })
-        
-        //const asyncFunction = categoryId ? getProductsByCategory : getProducts
-
-        //asyncFunction(categoryId)
-        //    .then(response => {
-        //        setProducts(response)
-        //    }) 
-        //    .catch(error => {
-        //        console.log(error)
-        //    })
-        //    .finally(() => {
-        //        setLoading(false)
-        //    })
+            })     
     }, [categoryId])
 
     useEffect(() => {
@@ -94,8 +77,6 @@ const ItemListContainer = ({ greeting }) => {
             </div>
         </div>
     )
-
-    console.log(productsComponents)
 
     return (
         <div>

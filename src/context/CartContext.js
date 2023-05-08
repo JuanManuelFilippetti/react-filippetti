@@ -4,13 +4,12 @@ const CartContext = createContext('valor inicial')
 
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
-    console.log(cart)
 
     const addItem = (productToAdd) => {
         if(!isInCart(productToAdd.id)) {
             setCart(prev => [...prev, productToAdd])
         } else {
-            console.log('No se agraga porque ya esta en el carrito')
+            
         }
     }
 

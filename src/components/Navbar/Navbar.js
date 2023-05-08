@@ -1,5 +1,4 @@
 import './Navbar.css'
-//import logo from './assets/cart.svg'
 import CartWidget from '../../CartWidget/CartWidget'
 import { useEffect, useState } from 'react'
 import { getCategories } from '../../asyncMock'
@@ -27,10 +26,7 @@ const Navbar = () => {
                         return (
                             <Link key={cat.id} to={'/category/${cat.slug}'} >{cat.description}</Link>
                         )
-                    })
-                    //<button label="Juguetes Madera" />
-                    //<button label="Didacticos" />
-                    //<button label="Laberintos" />
+                    })                  
                 }
             </div>
             <div className="cart">
