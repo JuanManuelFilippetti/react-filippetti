@@ -20,7 +20,7 @@ const Checkout = () => {
         <div>
             <h1>Checkout</h1>
             <h2>Ingrese sus datos</h2>
-            <Button onClick={createOrder}>Crear orden</Button>
+            {/* <Button onClick={createOrder}>Crear orden</Button> */}
         </div>
     )
 }

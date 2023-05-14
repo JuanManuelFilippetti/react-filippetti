@@ -1,6 +1,6 @@
 import './Navbar.css'
-import CartWidget from '../../CartWidget/CartWidget'
-import { useEffect, useState } from 'react'
+import CartWidget from '../CartWidget/CartWidget'
+import { useEffect, useState, db } from 'react'
 import { Link } from 'react-router-dom'
 import { collection, getDocs, query, orderBy } from 'firebase/firestore'
 
@@ -9,7 +9,7 @@ const Navbar = () => {
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
-        const categoriesRef = collection(db, 'categories'), orderBy('order')
+        const categoriesRef = query(collection(db, 'categories'), orderBy('order'))
 
         getDocs(categoriesRef)
         .then(snapshot => {
@@ -28,7 +28,7 @@ const Navbar = () => {
                 <div className="Categories">
                     {
                         categories.map(cat => {
-                            return <NavLink key={cat.id} to={'/category/${cat.slug}'} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>{cat.label}</NavLink>
+                            //return <NavLink key={cat.id} to={'/category/${cat.slug}'} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>{cat.label}</NavLink>
                         })
                     }
                 </div>

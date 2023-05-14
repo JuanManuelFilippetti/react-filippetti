@@ -26,7 +26,7 @@ export const CartProvider = ({ children }) => {
         let totalQuantity = 0
 
         cart.forEach(pord => {
-            totalQuantity += prod.quantity
+            //totalQuantity += prod.quantity
         })
 
         return totalQuantity
@@ -38,7 +38,7 @@ export const CartProvider = ({ children }) => {
         let total = 0
 
         cart.forEach(pord => {
-            total += prod.quantity * prod.price
+            //total += prod.quantity * prod.price
         })
 
         return total

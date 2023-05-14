@@ -28,7 +28,7 @@ const ItemListContainer = ({ greeting }) => {
                     const data = doc.data()
                     return { id: doc.id, ...data}
                 })
-                setProducts(productsAdapted)
+                //setProducts(productsAdapted)
             })
             .catch(error => {
             })
@@ -62,25 +62,13 @@ const ItemListContainer = ({ greeting }) => {
     return (
         <div>
             <h1>Saludo</h1> 
-            <div>
-                {
-                    products.map(prod => {
-                        return (
-                            <div>
-                                <h2>{products.name}</h2>
-                                <img src={prod.img} alt={prod.name} style={{ width: 100}} />
-                                <button>Ver detalle</button>
-                            </div>
-                        )
-                    })
-                }
-            </div>
         </div>
     )
-
+    
     return (
         <div>
             <h1>{greeting}</h1>
+            <ItemList products={products}/>
         </div>
     )
 }

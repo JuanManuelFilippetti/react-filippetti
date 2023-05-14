@@ -18,8 +18,8 @@ const ItemDetailContainer = () => {
         
         getDoc(productsRef)
             .then(snapshot => {
-                const productsAdapted = { id: snapshot.id, ...data }
-                setProduct(productsAdapted)
+                //const productsAdapted = { id: snapshot.id, ...data }
+                //setProduct(productsAdapted)
             })
             .catch(error => {
             })
