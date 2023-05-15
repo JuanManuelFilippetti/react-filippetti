@@ -1,7 +1,7 @@
 import './ItemDetailContainer.css'
-import { useEffect, useState } from "react"
+import { useState, useEffect } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import { useParams, useSearchParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { getDoc, doc } from 'firebase/firestore'
 import { db } from '../../service/firebase/firebaseConfig'
 
@@ -11,15 +11,16 @@ const ItemDetailContainer = () => {
 
     const { itemId } = useParams()
 
-    useEffect(() => { 
+    useEffect(() => {
         setLoading(true)
-        
-        const productsRef = doc(db, 'products', itemId)
-        
-        getDoc(productsRef)
+
+        const productRef = doc(db, 'products', itemId)
+
+        getDoc(productRef)
             .then(snapshot => {
-                //const productsAdapted = { id: snapshot.id, ...data }
-                //setProduct(productsAdapted)
+                const data = snapshot.data()
+                const productAdapted = { id: snapshot.id, ...data}
+                setProduct(productAdapted)
             })
             .catch(error => {
             })
@@ -34,13 +35,12 @@ const ItemDetailContainer = () => {
             <div>
                 <h1>Cargando...</h1>
             </div>
-            )
-        }    
+        )
+    }
 
-    return (
-        <div className='ItemDetailContainer'>
-            <h1>Detalle de producto</h1>
-            <ItemDetail {...product} />
+    return(
+        <div className='ItemDetailContainer' >
+            <ItemDetail  {...product} />
         </div>
     )
 }
