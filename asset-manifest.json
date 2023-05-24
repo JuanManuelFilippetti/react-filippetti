@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/JuanManuelFilippetti/react-filippetti/static/css/main.f41fd673.css",
+    "main.js": "/JuanManuelFilippetti/react-filippetti/static/js/main.168765c5.js",
+    "static/js/787.3fc668e9.chunk.js": "/JuanManuelFilippetti/react-filippetti/static/js/787.3fc668e9.chunk.js",
+    "index.html": "/JuanManuelFilippetti/react-filippetti/index.html",
+    "static/media/logo.svg": "/JuanManuelFilippetti/react-filippetti/static/media/logo.c13f978290e700ce3e57c7e15d15c75b.svg",
+    "static/media/cart.svg": "/JuanManuelFilippetti/react-filippetti/static/media/cart.fa7c2b08a67f837a84f225c2b57fd9d2.svg",
+    "main.f41fd673.css.map": "/JuanManuelFilippetti/react-filippetti/static/css/main.f41fd673.css.map",
+    "main.168765c5.js.map": "/JuanManuelFilippetti/react-filippetti/static/js/main.168765c5.js.map",
+    "787.3fc668e9.chunk.js.map": "/JuanManuelFilippetti/react-filippetti/static/js/787.3fc668e9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f41fd673.css",
+    "static/js/main.168765c5.js"
+  ]
+}
